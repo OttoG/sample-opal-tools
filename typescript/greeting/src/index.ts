@@ -27,16 +27,18 @@ async function greeting(parameters: GreetingParameters) {
   
   // If language not specified, choose randomly
   const selectedLanguage = language || 
-    ['english', 'spanish', 'french'][Math.floor(Math.random() * 3)];
+    ['english', 'spanish', 'french', 'swedish'][Math.floor(Math.random() * 4)];
   
   // Generate greeting based on language
   let greeting: string;
   if (selectedLanguage.toLowerCase() === 'spanish') {
-    greeting = `¡Hola, ${name}! ¿Cómo estás?`;
+    greeting = `¡Buenas tardes, ${name}! ¿Cómo estás?`;
   } else if (selectedLanguage.toLowerCase() === 'french') {
-    greeting = `Bonjour, ${name}! Comment ça va?`;
+    greeting = `Allo, ${name}! Ça va?`;
+  } else if (selectedLanguage.toLowerCase() === 'swedish') {
+    greeting = `Tjenare, ${name}! Hur e läget?`;
   } else { // Default to English
-    greeting = `Hello, ${name}! How are you?`;
+    greeting = `How do you do, ${name}! Whassup?`;
   }
   
   return {
